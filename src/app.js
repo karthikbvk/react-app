@@ -59,7 +59,7 @@ console.log(emp.placeslivedin());
 
 
 
-
+const appRoot = document.getElementById('app');
 
 
 
@@ -69,7 +69,7 @@ console.log(emp.placeslivedin());
 // ReactDOM.render(template,appRoot);
 
 const data = {
-    title : "React",
+    title : "React dec 1",
     options: []
 
 };
@@ -93,11 +93,15 @@ const removeAll = () =>{
        data.options = []; //data.options.length = 0;
        valueOutput();
 }
-const appRoot = document.getElementById('app');
-const ranNum = () =>{
+
+const ranNum = () => {
+    debugger
     const opt = data.options;
-    const numOut = math.random(opt.length) ;
-    alert(numOut);
+    const numOut = Math.floor((Math.random() * opt.length)) ;
+    const dataOut = data.options[numOut];
+    
+    console.log(dataOut);
+    
 }
 const valueOutput = () => {
     const  count = data.options.length;
@@ -109,8 +113,8 @@ const valueOutput = () => {
             <h1> {data.title}</h1>
             <p>{optLen > 0 ? 'Options entered':'No options entered' }</p>
             <p>{optLen}</p>
-            <button onClick={removeAll}>remove all</button>
-            <button onClick={ranNum}>Random number</button>
+            <button onClick={removeAll}>remove all and </button>
+            <button onClick={ranNum}>Random numbers</button>
             <form  onSubmit={onFormSubmit}>
                 <input type="text" name="option" autoComplete="off"></input>
                 <button>options</button>
@@ -119,7 +123,6 @@ const valueOutput = () => {
                 { 
                     data.options.map((list) => { 
                         return <li key={list}>{list}</li>
-                        
                     } )
             }
             </ol> 

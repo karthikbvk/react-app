@@ -61,10 +61,12 @@ var emp = {
 };
 console.log(emp.placeslivedin());
 
+var appRoot = document.getElementById('app');
+
 // ReactDOM.render(template,appRoot);
 
 var data = {
-    title: "React",
+    title: "React dec 1",
     options: []
 
 };
@@ -86,7 +88,7 @@ var removeAll = function removeAll() {
     data.options = []; //data.options.length = 0;
     valueOutput();
 };
-var appRoot = document.getElementById('app');
+
 var ranNum = function ranNum() {
     var opt = data.options;
     var numOut = math.random(opt.length);
@@ -118,12 +120,12 @@ var valueOutput = function valueOutput() {
         React.createElement(
             'button',
             { onClick: removeAll },
-            'remove all'
+            'remove all and '
         ),
         React.createElement(
             'button',
             { onClick: ranNum },
-            'Random number'
+            'Random numbers'
         ),
         React.createElement(
             'form',
