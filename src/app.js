@@ -94,7 +94,11 @@ const removeAll = () =>{
        valueOutput();
 }
 const appRoot = document.getElementById('app');
-
+const ranNum = () =>{
+    const opt = data.options;
+    const numOut = math.random(opt.length) ;
+    alert(numOut);
+}
 const valueOutput = () => {
     const  count = data.options.length;
     // const list = data.options;
@@ -106,7 +110,7 @@ const valueOutput = () => {
             <p>{optLen > 0 ? 'Options entered':'No options entered' }</p>
             <p>{optLen}</p>
             <button onClick={removeAll}>remove all</button>
-            
+            <button onClick={ranNum}>Random number</button>
             <form  onSubmit={onFormSubmit}>
                 <input type="text" name="option" autoComplete="off"></input>
                 <button>options</button>
